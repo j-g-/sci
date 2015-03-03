@@ -1,0 +1,9 @@
+# ChangeLog for dev-python/jupyter-configurable-http-proxy
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*jupyter-configurable-http-proxy-9999 (03 Mar 2015)
+
+  03 Mar 2015; Marius Brehler <marbre@linux.sungazer.de>
+  +jupyter-configurable-http-proxy-9999.ebuild, +metadata.xml:
+  dev-python/jupyter-configurable-http-proxy: Initial ebuild
