@@ -1,0 +1,9 @@
+# ChangeLog for dev-python/jupyter-sudospawner
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*jupyter-sudospawner-9999 (07 Mar 2015)
+
+  07 Mar 2015; Marius Brehler <marbre@linux.sungazer.de>
+  +jupyter-sudospawner-9999.ebuild, +metadata.xml:
+  Initial ebuild
