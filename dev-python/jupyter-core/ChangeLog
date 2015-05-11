@@ -1,0 +1,9 @@
+# ChangeLog for dev-python/jupyter-core
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*jupyter-core-9999 (11 May 2015)
+
+  11 May 2015; Marius Brehler <marbre@linux.sungazer.de>
+  +jupyter-core-9999.ebuild, +metadata.xml:
+  Initial ebuild
