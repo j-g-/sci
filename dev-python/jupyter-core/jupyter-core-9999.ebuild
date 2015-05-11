@@ -9,7 +9,7 @@ inherit distutils-r1
 
 MY_PN="jupyter_core"
 
-DESCRIPTION="A multi-user server for Jupyter notebooks"
+DESCRIPTION="Core common functionality of Jupyter projects"
 HOMEPAGE="http://jupyter.org"
 
 if [ ${PV} == "9999" ] ; then
@@ -24,6 +24,6 @@ LICENSE="BSD"
 SLOT="0"
 
 RDEPEND="
-	dev-python/traitlets
+	dev-python/traitlets[${PYTHON_USEDEP}]
 	"
 DEPEND="${RDEPEND}"
