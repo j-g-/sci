@@ -24,6 +24,7 @@ LICENSE="BSD"
 SLOT="0"
 
 RDEPEND="
-	dev-python/traitlets[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+    dev-python/mock[${PYTHON_USEDEP}]
 	"
 DEPEND="${RDEPEND}"
