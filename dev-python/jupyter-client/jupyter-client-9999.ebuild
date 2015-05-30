@@ -22,9 +22,17 @@ fi
 
 LICENSE="BSD"
 SLOT="0"
+IUSE="test"
 
 RDEPEND="
 	dev-python/traitlets[${PYTHON_USEDEP}]
 	dev-python/jupyter-core[${PYTHON_USEDEP}]
+	dev-python/ipython-ipykernel[${PYTHON_USEDEP}]
 	"
-DEPEND="${RDEPEND}"
+DEPEND="${RDEPEND}
+	test? ( dev-python/nose[${PYTHON_USEDEP}] )
+	"
+
+python_test() {
+	nosetests --with-coverage jupyter_client || die
+}
