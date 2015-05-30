@@ -22,9 +22,20 @@ fi
 
 LICENSE="BSD"
 SLOT="0"
+IUSE="test"
 
 RDEPEND="
-	dev-python/pytest[${PYTHON_USEDEP}]
-    dev-python/mock[${PYTHON_USEDEP}]
+	dev-python/traitlets[${PYTHON_USEDEP}]
 	"
-DEPEND="${RDEPEND}"
+DEPEND="${RDEPEND}
+	test? ( dev-python/pytest[${PYTHON_USEDEP}]
+			dev-python/pytest-cov[${PYTHON_USEDEP}]
+			dev-python/mock[${PYTHON_USEDEP}] )
+	"
+
+
+python_test() {
+	distutils_install_for_testing
+	cd "${TEST_DIR}"/lib || die
+	py.test jupyter_core || die
+}
