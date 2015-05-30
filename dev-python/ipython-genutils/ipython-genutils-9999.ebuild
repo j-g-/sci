@@ -17,6 +17,13 @@ if [ ${PV} == "9999" ] ; then
 	EGIT_REPO_URI="https://github.com/ipython/${MY_PN}.git git://github.com/ipython/${MY_PN}.git"
 fi
 
+if [ ${PV} == "0.1.0" ] ; then
+	inherit git-r3
+	EGIT_REPO_URI="https://github.com/ipython/${MY_PN}.git git://github.com/ipython/${MY_PN}.git"
+	EGIT_COMMIT="0.1.0"
+	KEYWORDS="~amd64"
+fi
+
 LICENSE="BSD"
 SLOT="0"
 IUSE="test"
