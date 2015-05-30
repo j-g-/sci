@@ -22,10 +22,18 @@ fi
 
 LICENSE="BSD"
 SLOT="0"
+IUSE="test"
 
 RDEPEND="
+	dev-python/jsonschema[${PYTHON_USEDEP}]
 	dev-python/ipython-genutils[${PYTHON_USEDEP}]
 	dev-python/traitlets[${PYTHON_USEDEP}]
 	dev-python/jupyter-core[${PYTHON_USEDEP}]
 	"
 DEPEND="${RDEPEND}"
+
+python_test() {
+	distutils_install_for_testing
+	cd "${TEST_DIR}"/lib || die
+	nosetests --with-coverage --cover-package=nbformat nbformat || die
+}
