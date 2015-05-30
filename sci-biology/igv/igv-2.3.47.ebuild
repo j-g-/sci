@@ -70,6 +70,8 @@ java_prepare() {
 	mv -v oldlib/batik* lib || die
 
 	rm -rvf oldlib/* || die
+
+	epatch "${FILESDIR}"/"${PV}"-remove-oracle.jdbc.patch
 }
 
 src_install() {

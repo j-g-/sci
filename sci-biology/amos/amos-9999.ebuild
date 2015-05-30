@@ -23,7 +23,8 @@ IUSE="mpi qt4"
 DEPEND="
 	mpi? ( virtual/mpi )
 	dev-libs/boost
-	qt4? ( dev-qt/qtcore:4 )
+	qt4? ( dev-qt/qtcore:4[qt3support]
+		dev-qt/qt3support:4 )
 	sci-biology/blat
 	sci-biology/jellyfish"
 RDEPEND="${DEPEND}
@@ -45,4 +46,7 @@ src_install() {
 	doins "${D}"/usr/lib64/TIGR/*.pm
 	# move also /usr/lib64/AMOS/AMOS.py to /usr/bin
 	mv "${D}"/usr/lib64/AMOS/*.py "${D}"/usr/bin || die
+	# zap the mis-placed files ('make install' is at fault)
+	rm -f "${D}"/usr/lib64/AMOS/*.pm
+	rm -rf "${D}"/usr/lib64/TIGR
 }
