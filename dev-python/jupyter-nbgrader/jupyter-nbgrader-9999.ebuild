@@ -28,5 +28,6 @@ RDEPEND="
 	dev-python/sqlalchemy[${PYTHON_USEDEP}]
 	dev-python/flask[${PYTHON_USEDEP}]
 	dev-python/autopep8[${PYTHON_USEDEP}]
+	dev-python/python-dateutil[${PYTHON_USEDEP}]
 	"
 DEPEND="${RDEPEND}"
