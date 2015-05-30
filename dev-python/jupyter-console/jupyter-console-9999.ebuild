@@ -24,6 +24,9 @@ LICENSE="BSD"
 SLOT="0"
 
 RDEPEND="
+	>=dev-python/ipython-3.0.0[${PYTHON_USEDEP}]
+	dev-python/ipython-ipykernel[${PYTHON_USEDEP}]
 	dev-python/traitlets[${PYTHON_USEDEP}]
+	dev-python/jupyter-client[${PYTHON_USEDEP}]
 	"
 DEPEND="${RDEPEND}"
