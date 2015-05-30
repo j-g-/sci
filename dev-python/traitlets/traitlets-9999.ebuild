@@ -7,14 +7,12 @@ PYTHON_COMPAT=( python{3_3,3_4} )
 
 inherit distutils-r1
 
-MY_PN="jupyterhub"
-
 DESCRIPTION="A lightweight pure-Python derivative of Enthought Traits"
 HOMEPAGE="https://github.com/ipython/traitlets"
 
 if [ ${PV} == "9999" ] ; then
 	inherit git-r3
-	EGIT_REPO_URI="https://github.com/jupyter/${MY_PN}.git git://github.com/jupyter/${MY_PN}.git"
+	EGIT_REPO_URI="https://github.com/ipython/${PN}.git git://github.com/ipython/${PN}.git"
 else
 	SRC_URI=""
 	KEYWORDS="~amd64"
@@ -22,6 +20,10 @@ fi
 
 LICENSE="BSD"
 SLOT="0"
+IUSE="test"
 
-RDEPEND=""
-DEPEND="${RDEPEND}"
+DEPEND="test? ( dev-python/nose[${PYTHON_USEDEP}] )"
+
+python_test() {
+	nosetests --with-coverage --cover-package traitlets traitlets || die
+}
