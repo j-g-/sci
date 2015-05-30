@@ -27,6 +27,7 @@ IUSE="test"
 RDEPEND="
 	dev-python/traitlets[${PYTHON_USEDEP}]
 	dev-python/jupyter-core[${PYTHON_USEDEP}]
+	>=dev-python/pyzmq-14.4.0[${PYTHON_USEDEP}]
 	dev-python/ipython-ipykernel[${PYTHON_USEDEP}]
 	"
 DEPEND="${RDEPEND}
