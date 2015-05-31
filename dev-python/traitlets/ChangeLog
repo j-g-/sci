@@ -3,6 +3,9 @@
 # $Header: $
 
   31 May 2015; Marius Brehler <marbre@linux.sungazer.de> traitlets-9999.ebuild:
+  Add runtime dependencies
+
+  31 May 2015; Marius Brehler <marbre@linux.sungazer.de> traitlets-9999.ebuild:
   Enable python2_7
 
   30 May 2015; Marius Brehler <marbre@linux.sungazer.de> traitlets-9999.ebuild:

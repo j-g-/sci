@@ -22,6 +22,10 @@ LICENSE="BSD"
 SLOT="0"
 IUSE="test"
 
+RDEPEND="
+	dev-python/decorator[${PYTHON_USEDEP}]
+	dev-python/ipython-genutils[${PYTHON_USEDEP}]
+	"
 DEPEND="test? ( dev-python/nose[${PYTHON_USEDEP}] )"
 
 python_test() {
