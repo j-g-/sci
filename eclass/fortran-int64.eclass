@@ -16,13 +16,7 @@
 
 if [[ ! ${_FORTRAN_INT64_ECLASS} ]]; then
 
-# EAPI=4 is required for meaningful MULTILIB_USEDEP.
-case ${EAPI:-0} in
-	4|5) ;;
-	*) die "EAPI=${EAPI} is not supported" ;;
-esac
-
-inherit multilib-build toolchain-funcs
+inherit fortran-2 multilib-build toolchain-funcs
 
 # @ECLASS-VARIABLE: EBASE_PROFNAME
 # @DESCRIPTION: The base pkg-config module name of the package being built.
@@ -295,6 +289,12 @@ fortran-int64_multilib_multibuild_wrapper() {
 	multilib_toolchain_setup "${ABI}"
 	"${@}"
 }
+
+# EAPI=4 is required for meaningful MULTILIB_USEDEP.
+case ${EAPI:-0} in
+	4|5) ;;
+	*) die "EAPI=${EAPI} is not supported" ;;
+esac
 
 _FORTRAN_INT64_ECLASS=1
 fi
